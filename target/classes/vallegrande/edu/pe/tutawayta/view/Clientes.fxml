@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="vallegrande.edu.pe.tutawayta.controller.ClienteController"
+            styleClass="root-module">
+
+    <!-- TOP BAR -->
+    <top>
+        <HBox styleClass="top-bar" alignment="CENTER_LEFT" spacing="12">
+            <padding><Insets top="12" right="20" bottom="12" left="20"/></padding>
+            <Label text="👥  Gestión de Clientes" styleClass="top-titulo"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <TextField fx:id="txtBuscar" promptText="🔍  Buscar cliente..." styleClass="txt-buscar" prefWidth="220"/>
+            <Label fx:id="lblContador" text="0 registro(s)" styleClass="contador-label"/>
+            <Button text="✖ Cerrar" onAction="#volverInicio" styleClass="btn-cerrar"/>
+        </HBox>
+    </top>
+
+    <!-- CENTER: tabla -->
+    <center>
+        <TableView fx:id="tablaClientes" styleClass="tabla-principal">
+            <columns>
+                <TableColumn fx:id="colId"       text="ID"        prefWidth="50"  style="-fx-alignment:CENTER;"/>
+                <TableColumn fx:id="colNombre"   text="Nombre"    prefWidth="140"/>
+                <TableColumn fx:id="colApellido" text="Apellido"  prefWidth="140"/>
+                <TableColumn fx:id="colEmail"    text="Email"     prefWidth="180"/>
+                <TableColumn fx:id="colTelefono" text="Teléfono"  prefWidth="110"/>
+                <TableColumn fx:id="colEstado"   text="Estado"    prefWidth="90"  style="-fx-alignment:CENTER;"/>
+                <TableColumn fx:id="colAcciones" text="Acciones"  prefWidth="180" style="-fx-alignment:CENTER;"/>
+            </columns>
+            <placeholder><Label text="Sin clientes registrados" styleClass="tabla-placeholder"/></placeholder>
+        </TableView>
+    </center>
+
+    <!-- RIGHT: Formulario -->
+    <right>
+        <VBox spacing="14" styleClass="panel-form" prefWidth="280">
+            <padding><Insets top="20" right="18" bottom="20" left="18"/></padding>
+
+            <Label fx:id="lblFormTitulo" text="✚  NUEVO CLIENTE" styleClass="form-titulo"/>
+            <Separator/>
+
+            <Label text="Nombre *" styleClass="form-label"/>
+            <TextField fx:id="txtNombre" promptText="Nombre" styleClass="txt-field"/>
+
+            <Label text="Apellido" styleClass="form-label"/>
+            <TextField fx:id="txtApellido" promptText="Apellido" styleClass="txt-field"/>
+
+            <Label text="Email" styleClass="form-label"/>
+            <TextField fx:id="txtEmail" promptText="correo@ejemplo.com" styleClass="txt-field"/>
+
+            <Label text="Teléfono" styleClass="form-label"/>
+            <TextField fx:id="txtTelefono" promptText="999 999 999" styleClass="txt-field"/>
+
+            <Label text="Estado" styleClass="form-label"/>
+            <ComboBox fx:id="cmbEstado" maxWidth="Infinity" styleClass="cmb-field"/>
+
+            <Label fx:id="lblMensaje" text="" wrapText="true" styleClass="msg-ok"/>
+
+            <HBox spacing="8">
+                <Button fx:id="btnGuardar" text="💾  Guardar" onAction="#guardar" styleClass="btn-guardar" HBox.hgrow="ALWAYS" maxWidth="Infinity"/>
+                <Button text="🗑 Limpiar" onAction="#limpiarFormulario" styleClass="btn-limpiar"/>
+            </HBox>
+        </VBox>
+    </right>
+
+</BorderPane>

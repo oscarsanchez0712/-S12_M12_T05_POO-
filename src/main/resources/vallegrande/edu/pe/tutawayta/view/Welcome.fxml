@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="vallegrande.edu.pe.tutawayta.controller.WelcomeController"
+      alignment="CENTER" spacing="30" styleClass="root-welcome">
+
+    <padding><Insets top="40" right="60" bottom="40" left="60"/></padding>
+
+    <!-- Header -->
+    <VBox alignment="CENTER" spacing="8">
+        <Label text="🌵 TUTA WAYTA" styleClass="titulo-app"/>
+        <Label text="Sistema de Gestión Empresarial" styleClass="subtitulo-app"/>
+        <Label fx:id="lblConexion" text="⬤  Verificando conexión..." styleClass="status-checking"/>
+    </VBox>
+
+    <!-- Separator -->
+    <Separator/>
+
+    <!-- Navigation cards -->
+    <HBox alignment="CENTER" spacing="24">
+
+        <VBox alignment="CENTER" spacing="12" styleClass="card-nav">
+            <Label text="📦" style="-fx-font-size:40px;"/>
+            <Label text="Productos" styleClass="card-titulo"/>
+            <Label text="Gestiona tu catálogo" styleClass="card-desc" wrapText="true" textAlignment="CENTER"/>
+            <Button text="Abrir Productos" onAction="#abrirProductos" styleClass="btn-card"/>
+        </VBox>
+
+        <VBox alignment="CENTER" spacing="12" styleClass="card-nav">
+            <Label text="👥" style="-fx-font-size:40px;"/>
+            <Label text="Clientes" styleClass="card-titulo"/>
+            <Label text="Administra tus clientes" styleClass="card-desc" wrapText="true" textAlignment="CENTER"/>
+            <Button text="Abrir Clientes" onAction="#abrirClientes" styleClass="btn-card"/>
+        </VBox>
+
+        <VBox alignment="CENTER" spacing="12" styleClass="card-nav">
+            <Label text="🛒" style="-fx-font-size:40px;"/>
+            <Label text="Pedidos" styleClass="card-titulo"/>
+            <Label text="Controla tus pedidos" styleClass="card-desc" wrapText="true" textAlignment="CENTER"/>
+            <Button text="Abrir Pedidos" onAction="#abrirPedidos" styleClass="btn-card"/>
+        </VBox>
+
+    </HBox>
+
+    <!-- Footer -->
+    <Label text="© 2025 Tuta Wayta — Valle Grande" styleClass="footer-text"/>
+
+</VBox>
